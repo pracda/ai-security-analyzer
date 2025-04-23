@@ -16,7 +16,7 @@ Table of Contents
 Upload files to an S3 bucket.\
 Generate metadata (file name, size, and hash) for the uploaded file.\
 Analyze the file for malware using the VirusTotal API.\
-Gain insights into potential risks using AWS Bedrock's Claude model.\
+Gain insights into potential risks using AWS Bedrock's Claude model.
 
 The frontend provides a user-friendly interface for file uploads and displays metadata, VirusTotal results, and Bedrock insights. The backend handles file uploads, metadata generation, and interactions with external services.
 
@@ -73,15 +73,15 @@ malware-detection-system/\
 
 **Clone the Repository:**\
 git clone https://github.com/<your-username>/malware-detection-system.git\
-cd malware-detection-system\
+cd malware-detection-system
 
 **Install Dependencies:**\
 Frontend:**npm install**\
-Backend (in the root directory):**npm install express cors dotenv multer aws-sdk axios form-data @aws-sdk/client-bedrock-runtime**\
+Backend (in the root directory):**npm install express cors dotenv multer aws-sdk axios form-data @aws-sdk/client-bedrock-runtime**
 
 **Configure AWS CLI:**\
 Set up an AWS profile with access to S3 and Bedrock:\
-aws configure\
+aws configure
 
 Provide your AWS Access Key, Secret Key, region (us-east-1), and output format (json).
 
@@ -105,7 +105,7 @@ The React app runs on http://localhost:3001.
 
 **Deployment**
 **Backend Deployment**\
-Deploy to a Server (e.g., AWS EC2, Heroku):\
+Deploy to a Server (e.g., AWS EC2, Heroku):
 
 Copy the project files to the server.
 Install dependencies (npm install).\
@@ -118,7 +118,7 @@ app.use(cors({\
     origin: 'https://your-frontend-domain.com',\
     methods: ['GET', 'POST', 'PUT', 'DELETE'],\
     allowedHeaders: ['Content-Type', 'Authorization'],\
-}));\
+}));
 
 **Frontend Deployment**\
 Build the React App:\
