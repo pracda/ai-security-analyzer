@@ -18,7 +18,7 @@ Generate metadata (file name, size, and hash) for the uploaded file.\
 Analyze the file for malware using the VirusTotal API.\
 Gain insights into potential risks using AWS Bedrock's Claude model.\
 
-The frontend provides a user-friendly interface for file uploads and displays metadata, VirusTotal results, and Bedrock insights. The backend handles file uploads, metadata generation, and interactions with external services.\
+The frontend provides a user-friendly interface for file uploads and displays metadata, VirusTotal results, and Bedrock insights. The backend handles file uploads, metadata generation, and interactions with external services.
 
 # Architecture
 The application leverages the following technologies and services:\
@@ -27,7 +27,7 @@ The application leverages the following technologies and services:\
 **AWS S3:** Stores uploaded files.\
 **AWS Bedrock:** Uses the Claude model (anthropic.claude-v2) for risk analysis.\
 **VirusTotal API:** Scans files for malware.\
-**CORS:** Configured to allow frontend-backend communication.\
+**CORS:** Configured to allow frontend-backend communication.
 
 # Key API endpoints:
 
@@ -46,27 +46,27 @@ To set up and run the project, ensure you have:\
 **NPM:** For installing dependencies.
 
 # Repository Structure
-malware-detection-system/
-├── src/
-│   ├── components/
-│   │   ├── FileUploader.js       # Component for file uploads/
-│   │   ├── MetadataDisplay.js    # Displays file metadata/
-│   │   ├── VirusTotalResults.js  # Displays VirusTotal scan results/
-│   │   └── BedrockInsights.js    # Displays Bedrock analysis/
-│   ├── App.js                    # Main React component/
-│   ├── index.js                  # React entry point/
-│   └── index.css                 # Global CSS styles/
-├── routes/
-│   ├── upload.js                 # Handles file uploads to S3/
-│   ├── metadata.js               # Generates file metadata/
-│   ├── virusTotal.js             # Interacts with VirusTotal API/
-│   └── bedrock.js                # Interacts with AWS Bedrock/
-├── utils/
-│   ├── s3.js                     # S3 utility functions/
-│   └── hash.js                   # File hash generation/
-├── server.js                     # Express server setup/
-├── .env                          # Environment variables (not in repo)/
-├── package.json                  # Node.js dependencies/
+malware-detection-system/\
+├── src/\
+│   ├── components/\
+│   │   ├── FileUploader.js       # Component for file uploads\
+│   │   ├── MetadataDisplay.js    # Displays file metadata\
+│   │   ├── VirusTotalResults.js  # Displays VirusTotal scan results\
+│   │   └── BedrockInsights.js    # Displays Bedrock analysis\
+│   ├── App.js                    # Main React component\
+│   ├── index.js                  # React entry point\
+│   └── index.css                 # Global CSS styles\
+├── routes/\
+│   ├── upload.js                 # Handles file uploads to S3\
+│   ├── metadata.js               # Generates file metadata\
+│   ├── virusTotal.js             # Interacts with VirusTotal API\
+│   └── bedrock.js                # Interacts with AWS Bedrock\
+├── utils/\
+│   ├── s3.js                     # S3 utility functions\
+│   └── hash.js                   # File hash generation\
+├── server.js                     # Express server setup\
+├── .env                          # Environment variables (not in repo)\
+├── package.json                  # Node.js dependencies\
 └── README.md                     # This file
 
 # Setup Instructions
@@ -80,8 +80,8 @@ Frontend:**npm install**\
 Backend (in the root directory):**npm install express cors dotenv multer aws-sdk axios form-data @aws-sdk/client-bedrock-runtime**\
 
 **Configure AWS CLI:**\
-Set up an AWS profile with access to S3 and Bedrock:
-aws configure
+Set up an AWS profile with access to S3 and Bedrock:\
+aws configure\
 
 Provide your AWS Access Key, Secret Key, region (us-east-1), and output format (json).
 
@@ -91,16 +91,16 @@ Create a .env file in the root directory with the following:\
 **AWS_ACCESS_KEY_ID**=your_aws_access_key\
 **AWS_SECRET_ACCESS_KEY**=your_aws_secret_key\
 **AWS_REGION**=us-east-1\
-**S3_BUCKET_NAME**=malware-detection-logs\
+**S3_BUCKET_NAME**=malware-detection-logs
 
 Note: Do not commit the .env file to Git. Add it to .gitignore.\
 **Start the Backend**:\
-node server.js
+node server.js\
 The server runs on http://localhost:3000.
 
 **Start the Frontend:**\
-In a separate terminal:
-npm start
+In a separate terminal:\
+npm start\
 The React app runs on http://localhost:3001.
 
 **Deployment**
@@ -110,7 +110,7 @@ Deploy to a Server (e.g., AWS EC2, Heroku):\
 Copy the project files to the server.
 Install dependencies (npm install).\
 Set up environment variables on the server.\
-Run node server.js.\
+Run node server.js.
 
 
 Configure CORS:Update the cors configuration in server.js to match your frontend's production URL:\
@@ -127,7 +127,7 @@ npm run build
 Deploy to S3:Upload the build/ directory to an S3 bucket configured for static website hosting:\
 aws s3 sync build/ s3://<your-bucket-name> --region us-east-1\
 
-Set Up CloudFront (Optional):Create a CloudFront distribution for the S3 bucket to enable HTTPS and faster content delivery.\
+Set Up CloudFront (Optional):Create a CloudFront distribution for the S3 bucket to enable HTTPS and faster content delivery.
 
 # Usage
 Access the Application:Open the frontend URL (http://localhost:3001 locally or the deployed URL).\
@@ -159,7 +159,7 @@ The .env file contains sensitive data. Ensure it is listed in .gitignore:.env
 Use AWS IAM roles for EC2 or Lambda deployments to avoid hardcoding credentials.\
 Rotate API keys regularly and restrict their permissions.\
 Limit S3 bucket access with proper IAM policies and bucket policies.\
-Enable HTTPS for production deployments using CloudFront or a custom domain.\
+Enable HTTPS for production deployments using CloudFront or a custom domain.
 
 # Troubleshooting
 
